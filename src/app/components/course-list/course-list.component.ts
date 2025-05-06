@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { Courses } from '../../models/courses';
 import { CourseService } from '../../services/course.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-course-list',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './course-list.component.html',
-  styleUrl: './course-list.component.css'
+  styleUrls: ['./course-list.component.css'] 
 })
 export class CourseListComponent {
   courses: Courses[] = [];

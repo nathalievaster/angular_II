@@ -1,0 +1,74 @@
+/* Grundläggande layout */
+:host {
+    display: block;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdfdfd;
+  }
+  
+  /* Rubrik */
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  /* Tabell */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tabellhuvud */
+  thead {
+    background-color: #007acc;
+    color: white;
+  }
+  
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.5s ease;
+  }
+  
+  /* Responsivitet */
+  @media screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+  
+    tr {
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      padding: 1rem;
+    }
+  
+    td {
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 45%;
+      padding-left: 1rem;
+      font-weight: bold;
+    }
+  
+    thead {
+      display: none;
+    }
+  }
+  

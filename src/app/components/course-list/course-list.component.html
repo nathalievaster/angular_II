@@ -1,15 +1,17 @@
 <h2>Kurser</h2>
 
+<input type="text" [(ngModel)]="searchTerm" (input)="applyFilter()" placeholder="Sök kurs...">
+
 <table>
     <thead>
-      <tr>
-        <th>Kurskod</th>
-        <th>Kursnamn</th>
-        <th>Progression</th>
-      </tr>
-    </thead>
+        <tr>
+          <th (click)="setSort('code')">Kurskod</th>
+          <th (click)="setSort('coursename')">Kursnamn</th>
+          <th (click)="setSort('progression')">Progression</th>
+        </tr>
+      </thead>
     <tbody>
-      <tr *ngFor="let course of courses">
+      <tr *ngFor="let course of filteredCourses">
         <td data-label="Kurskod">{{ course.code }}</td>
         <td data-label="Kursnamn">{{ course.coursename }}</td>
         <td data-label="Progression">{{ course.progression }}</td>

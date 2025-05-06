@@ -1,59 +1,50 @@
-# AngularII
+# Ramschema Webbutveckling – Angular-applikation
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+Detta projekt är en enkel **Angular-applikation** som presenterar kurser för Webbutvecklingsprogrammet i en tabell med **sorterings- och filtreringsfunktionalitet**. Kursdatan hämtas från en extern JSON-fil och visas på en sida utan sidomladdning.
 
-## Development server
+## Teknisk uppbyggnad
 
-To start a local development server, run:
+- **Angular CLI** (standalone-komponenter)
+- **HttpClient** för att hämta JSON-data
+- **Data-binding** och **event-binding** för live-uppdateringar
+- **Responsiv design** med CSS
+- **Routing** med `@angular/router`
+- Filtrering via `ngModel`
+- Sortering genom klick på tabellrubriker
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Projektstruktur
 
 ```bash
-ng generate --help
+src/
+├── app/
+│   ├── components/
+│   │   └── course-list/
+│   │       ├── course-list.component.ts
+│   │       ├── course-list.component.html
+│   │       └── course-list.component.css
+│   ├── services/
+│   │   └── course.service.ts
+│   ├── models/
+│   │   └── courses.ts
+│   ├── app.routes.ts
+│   └── app.config.ts
+└── index.html
 ```
 
-## Building
+## Funktionalitet
 
-To build the project run:
+### Filtrering
+- Användaren kan skriva in ett sökord i ett textfält.
 
-```bash
-ng build
-```
+- Resultatet uppdateras direkt vid varje tangenttryckning.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Filtreringen gäller kurskod och kursnamn.
 
-## Running unit tests
+### Sortering
+- Klick på tabellrubriker (Kurskod, Kursnamn, Progression) sorterar tabellen.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- Sortering växlar mellan stigande och fallande ordning.
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Visuellt feedback ges vid hover och klick.
